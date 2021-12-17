@@ -1,12 +1,28 @@
 import io 
 import random
+import sqlite3
+from sqlite3.dbapi2 import connect
 
 SWE = 0
 ENG = 1
 
+#Read txt file
 f = io.open("spanska.txt", "r",encoding='utf8')
 lines = f.readlines()
 
+
+#Open database
+sqlite_connection = sqlite3.connect('spanska.db')
+cursor = sqlite_connection.cursor()
+
+create_table_cmd = """CREATE TABLE WORD_DATA (
+word VARCHAR(50),
+translation VARCHAR(50)
+);"""
+ 
+cursor.execute(create_table_cmd)
+sqlite_connection.commit()
+sqlite_connection.close()
 
 class Word:
     def __init__(self, palabra, translation, example_sentence):

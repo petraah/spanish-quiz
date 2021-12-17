@@ -16,10 +16,8 @@ class Word:
         self.example_sentence = example_sentence
 
     def check_if_correct(self, input):
-        correct = False
-        if input in self.palabra:
-            correct = True
-        return correct
+        return (input in self.palabra)
+
 
 
 def create_word_from_str(input: str):

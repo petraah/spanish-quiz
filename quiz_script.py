@@ -15,7 +15,7 @@ lines = f.readlines()
 sqlite_connection = sqlite3.connect('spanska.db')
 cursor = sqlite_connection.cursor()
 
-create_table_cmd = """CREATE TABLE WORD_DATA (
+create_table_cmd = """CREATE TABLE words (
 word VARCHAR(50),
 translation VARCHAR(50)
 );"""

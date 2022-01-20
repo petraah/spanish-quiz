@@ -1,6 +1,6 @@
 const question = document.getElementById('question');
 const choices = Array.from(document.getElementsByClassName('choice-text'));
-console.log(choices);
+const form = document.getElementById('myForm'); //TODO change name to input
 
 let currentQuestion = {}; //object
 let acceptingAnswers = false;
@@ -82,5 +82,10 @@ choices.forEach(choice => {
         }, 1000);
     });
 })
+
+form.addEventListener('submit', e => {
+    let x = form["input_word"].value;
+    alert(x);
+});
 
 startGame();

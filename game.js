@@ -13,19 +13,15 @@ let questions = [
         question: "What is 'cat' in spanish?",
         choice1: "perro",
         choice2: "gato",
-        answer: 2
+        answer: 2,
+        word: "gato"
     },
     {
         question: "What is 'rat' in spanish?",
         choice1: "rata",
         choice2: "ratón",
-        answer: 1
-    },
-    {
-        question: "What is 'mouse' in spanish?",
-        choice1: "rata",
-        choice2: "ratón",
-        answer: 2
+        answer: 1,
+        word: "rata"
     }
 ];
 
@@ -55,14 +51,14 @@ getNewQuestion = () => {
         choice.innerText = currentQuestion['choice' + number];
     })
 
-    availableQuestions.splice(questionIndex, 1); //remove the question
+    availableQuestions.splice(questionIndex, 1); //remove the question from list of available questions 
 
     acceptingAnswers = true;
 }
 
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
-        //console.log(e.target);
+    
         if(!acceptingAnswers) return;
 
         acceptingAnswers = false;
@@ -77,15 +73,26 @@ choices.forEach(choice => {
         selectedChoice.parentElement.classList.add(classToApply); //'this is how you apply classes in js'
 
         setTimeout( () => {
-            selectedChoice.parentElement.classList.remove(classToApply);
+            selectedChoice.parentElement.classList.remove(classToApply); 
             getNewQuestion();
         }, 1000);
     });
 })
 
 form.addEventListener('submit', e => {
-    let x = form["input_word"].value;
-    alert(x);
+    //alert(acceptingAnswers); TODO: Undersök varför detta alltid verkar vara true, och om det är ett problem 
+    if(!acceptingAnswers) return;
+
+    acceptingAnswers = false;
+    let answer = form["input_word"].value;
+    let correct = answer == currentQuestion.word;
+    alert(correct); // TODO make fansier display of correctness
+    //TODO remove question if answered correctly
+
+    setTimeout( () => {
+        getNewQuestion();
+    }, 1000);
+
 });
 
 startGame();

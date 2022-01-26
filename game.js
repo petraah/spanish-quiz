@@ -4,6 +4,7 @@ const form = document.getElementById('myForm');
 let currentQuestion = {}; //object
 let acceptingAnswers = false;
 let questionCounter = 0;
+let questionIndex = 0;
 let availableQuestions = []; 
 
 let questions = [
@@ -19,7 +20,7 @@ let questions = [
 
 /* CONSTANTS */
 
-const MAX_QUESTIONS = 3;
+const MAX_QUESTIONS = 20;
 
 startGame = () => {
     questionCounter = 0;
@@ -29,15 +30,13 @@ startGame = () => {
 
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter >= MAX_QUESTIONS){
-        return window.location.assign('/index.html'); //TODO: create 'end' page
+        return window.location.assign('/index.html');
     }
 
     questionCounter++;
-    const questionIndex = Math.floor(Math.random() * availableQuestions.length);
+    questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
     question.innerText = currentQuestion.question;
-
-    availableQuestions.splice(questionIndex, 1); //TODO only remove question if it has class 'correct'
 
     acceptingAnswers = true;
 }
@@ -53,6 +52,7 @@ form.addEventListener('submit', e => {
     let classToApply = 'incorrect';
     if(answer == currentQuestion.word){
         classToApply = 'correct'
+        availableQuestions.splice(questionIndex, 1);
     }
 
     e.target.classList.add(classToApply);

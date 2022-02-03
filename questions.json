@@ -1,10 +1,10 @@
 [
     {
-        "question": "What is 'cat' in spanish?",
+        "question": "cat",
         "word": "gato"
     },
     {
-        "question": "What is 'rat' in spanish?",
+        "question": "rat",
         "word": "rata"
     }
 ]

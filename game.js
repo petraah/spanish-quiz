@@ -7,6 +7,9 @@ let questionCounter = 0;
 let questionIndex = 0;
 let availableQuestions = []; 
 
+/* CONSTANTS */
+const MAX_QUESTIONS = 20;
+
 let questions = [];
 fetch("questions.json").then( res => {
     return res.json();
@@ -14,10 +17,6 @@ fetch("questions.json").then( res => {
     questions = loadedQuestions;
     startGame();
 });
-
-/* CONSTANTS */
-
-const MAX_QUESTIONS = 20;
 
 startGame = () => {
     questionCounter = 0;
@@ -33,7 +32,7 @@ getNewQuestion = () => {
     questionCounter++;
     questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = currentQuestion.question;
+    question.innerText = "What is '" + currentQuestion.question + "' in spanish?";
 
     acceptingAnswers = true;
 }
@@ -60,5 +59,3 @@ form.addEventListener('submit', e => {
     }, 1000);
 
 });
-
-//startGame();

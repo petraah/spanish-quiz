@@ -1,5 +1,5 @@
 learning language - the language the user is learning (spanish)
-word - the word the user is learning (gato)
-translation - the translation of the word in a known language (katt)
+learning word - the word the user is learning (gato)
+question word - the translation of the word in a known language (katt)
 translation language - the language used for the translation (swedish)
 question - translation task

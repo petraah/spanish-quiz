@@ -7,16 +7,13 @@ let questionCounter = 0;
 let questionIndex = 0;
 let availableQuestions = []; 
 
-let questions = [
-    {
-        question: "What is 'cat' in spanish?",
-        word: "gato"
-    },
-    {
-        question: "What is 'rat' in spanish?",
-        word: "rata"
-    }
-];
+let questions = [];
+fetch("questions.json").then( res => {
+    return res.json();
+}).then( loadedQuestions => {
+    questions = loadedQuestions;
+    startGame();
+});
 
 /* CONSTANTS */
 
@@ -64,4 +61,4 @@ form.addEventListener('submit', e => {
 
 });
 
-startGame();
+//startGame();

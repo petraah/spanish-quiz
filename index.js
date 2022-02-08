@@ -1,4 +1,4 @@
-//localStorage.clear();
+localStorage.clear();
 
 document.getElementById('file-input').addEventListener('change', function() {
     let file = document.getElementById('file-input').files[0];

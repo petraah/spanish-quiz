@@ -1,9 +1,11 @@
 .correct {
     border: 1rem solid #28a745;
+    border-radius: 2rem;
 }
 
 .incorrect {
     border: 1rem solid #dc3545;
+    border-radius: 2rem;
 }
 
 input[type=text] {
@@ -13,7 +15,6 @@ input[type=text] {
     border-radius: 1rem;
     font-size: 2rem;
     padding-left: 1rem;
-    
 }
 
 input[type=text]:focus {

@@ -11,12 +11,11 @@ let availableQuestions = [];
 const MAX_QUESTIONS = 20;
 
 let questions = [];
-fetch("questions.json").then( res => {
-    return res.json();
-}).then( loadedQuestions => {
-    questions = loadedQuestions;
-    startGame();
-});
+let keys = Object.keys(localStorage);
+for(let key of keys) { //TODO: Make this operation asynchronous? 
+    var obj = JSON.parse(window.localStorage.getItem(key));
+    questions.push(obj);
+}
 
 startGame = () => {
     questionCounter = 0;
@@ -59,3 +58,5 @@ form.addEventListener('submit', e => {
     }, 1000);
 
 });
+
+startGame();

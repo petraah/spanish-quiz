@@ -20,3 +20,8 @@ input[type=text] {
 input[type=text]:focus {
     outline: none;
 }
+
+form {
+    width: 50rem;
+    align-self: center;
+}

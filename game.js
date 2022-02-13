@@ -1,4 +1,4 @@
-const question = document.getElementById('question');
+const question_text = document.getElementById('question');
 const form = document.getElementById('myForm'); 
 
 let currentQuestion = {}; //object
@@ -33,8 +33,13 @@ getNewQuestion = () => {
     questionCounter++;
     questionIndex = Math.floor(Math.random() * availableQuestions.length);
     currentQuestion = availableQuestions[questionIndex];
-    question.innerText = "What is '" + currentQuestion.question + "' in spanish?";
+    question_text.innerText = currentQuestion.question;
 
+    acceptingAnswers = true;
+}
+
+getSameQuestion = () => {
+    form.reset();
     acceptingAnswers = true;
 }
 
@@ -46,18 +51,25 @@ form.addEventListener('submit', e => {
     acceptingAnswers = false;
     let answer = form["input_word"].value;
 
-    let classToApply = 'incorrect';
     if(answer == currentQuestion.word){
-        classToApply = 'correct'
+        let classToApply = 'correct'
+        e.target.classList.add(classToApply);
         availableQuestions.splice(questionIndex, 1);
+
+        setTimeout(() => {
+            e.target.classList.remove(classToApply);
+            getNewQuestion(); 
+        }, 1000);
+    } else {
+        let classToApply = 'incorrect';
+        e.target.classList.add(classToApply);
+
+        setTimeout(() => {
+            e.target.classList.remove(classToApply);
+            question_text.innerText = currentQuestion.question + " = " + currentQuestion.word;
+            getSameQuestion(); 
+        }, 1000);
     }
-
-    e.target.classList.add(classToApply);
-
-    setTimeout(() => {
-        e.target.classList.remove(classToApply);
-        getNewQuestion(); 
-    }, 1000);
 
 });
 

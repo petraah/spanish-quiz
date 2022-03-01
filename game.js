@@ -8,7 +8,7 @@ let questionIndex = 0;
 let availableQuestions = []; 
 
 /* CONSTANTS */
-const MAX_QUESTIONS = 20;
+const MAX_QUESTIONS = 2;
 
 let questions = [];
 let keys = Object.keys(localStorage);

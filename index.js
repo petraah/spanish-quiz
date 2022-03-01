@@ -1,6 +1,17 @@
-localStorage.clear();
+const play_button = document.getElementById('play-button');
+
+if(localStorage.getItem('0')){
+    alert("not empty!")
+    play_button.disabled = false;
+} else {
+    alert("empty!")
+    play_button.disabled = true;
+}
+
+button.disabled = true;
 
 document.getElementById('file-input').addEventListener('change', function() {
+    play_button.disabled = false;
     let file = document.getElementById('file-input').files[0];
     let reader = new FileReader();
     reader.readAsText(file);

@@ -30,18 +30,18 @@ la espalda - rygg (te veo venir con la espalda pintada)
 la cabeza - huvud (me duele la cabeza)
 la barriga - [en] belly (el hombre tiene la barriga cervecera)
 el diente - tand (me falta dos dientes)
-la pierna - [en] leg (tiene las piernas fuertes)
-el pie - fot (tengo los pies tan fríos que ya no siento los dedos)
-yo hago - jag gör (sdkjfh)
-yo estoy haciendo - jag håller på att göra (kjsdfh)
-yo he hecho - jag har gjort (sjgf)
-yo estuve haciendo - jag höll på att göra (kjadsfhg)
-anoche - last night [en] (sdhf)
+la pierna - benet
+el pie - foten
+yo hago - jag gör 
+yo estoy haciendo - jag håller på att göra 
+yo he hecho - jag har gjort 
+yo estuve haciendo - jag höll på att göra 
+anoche - last night [en]
 yo estuve - jag var (tillfälligt)
 tú estuviste - du var (tillfälligt)
 ella estuvo - hon var (tillfälligt)
 él estuvo - han var (tillfälligt)
-agradable - nice [en] (él está muy agradable)
-agrio - sur (edkfnh)
-amargo - bitter (kjsnfd)
-enviar - skicka (sdfjk)
+agradable - nice [en] 
+agrio - sur 
+amargo - bitter 
+enviar - skicka 
